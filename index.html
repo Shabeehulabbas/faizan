@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    text-align: center;
+    color: #333;
+}
+
+/* Section 1 */
+.section1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #ffccff;
+}
+
+.wish h1 {
+    font-size: 3rem;
+    color: #ff3366;
+}
+
+.wish p {
+    font-size: 1.5rem;
+    color: #333;
+    padding-bottom:30px;
+}
+
+.image-container img {
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Section 2 */
+.section2 {
+    padding: 30px;
+    background-color: #ffff99;
+}
+
+.line h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: #ff9933;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.section2 .image-container img {
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+#prank-popup img {
+    max-width: 90%;
+    max-height: 90%;
+    cursor: pointer;
+}
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .section1 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-container img {
+        width: 100%;
+    }
+
+    .section2 .image-container img {
+        width: 80%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="section section1">
+        <div class="wish">
+            <h1>Happy Birthday Bhai!</h1>
+            <p>Age ma baray ho gae ho laking paka phir bhee baray hain ❤️</p>
+        </div>
+        <div class="image-container">
+            <img src="image.jpg" alt="Birthday Image">
+        </div>
+    </div>
+
+    <div class="section section2">
+        <div class="line">
+            <h2>Baray ho gay ho?
+                imge per click kro >>>
+            </h2>
+        </div>
+        <div class="image-container">
+            <img src="image.png" alt="Funny Image" style="width: 100%;" id="funny-image">
+        </div>
+    </div>
+
+    <!-- Prank Image Popup -->
+    <div id="prank-popup" style="display: none;">
+        <img src="prank.jpg" alt="Prank Image" id="prank-image">
+    </div>
+
+    <script>
+      // Get the funny image and prank popup elements
+const funnyImage = document.getElementById('funny-image');
+const prankPopup = document.getElementById('prank-popup');
+const prankImage = document.getElementById('prank-image');
+
+// Show the prank popup when funny image is clicked
+funnyImage.addEventListener('click', () => {
+    prankPopup.style.display = 'flex';
+    prankPopup.style.position = 'fixed';
+    prankPopup.style.top = '0';
+    prankPopup.style.left = '0';
+    prankPopup.style.width = '100%';
+    prankPopup.style.height = '100%';
+    prankPopup.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    prankPopup.style.justifyContent = 'center';
+    prankPopup.style.alignItems = 'center';
+});
+
+// Close the prank popup when prank image is clicked
+prankImage.addEventListener('click', () => {
+    prankPopup.style.display = 'none';
+});
+
+   
+
+    </script>
+</body>
+</html>
